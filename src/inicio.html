@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KingMax member</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <header><span class="brand">KINGMAX</span></header>
+  <main>
+    <form action="#" id="form">
+      <div class="form-section">
+        <div class="plan"><span class="brand">KINGMAX</span> mensual</div>
+        <div class="price">$8.90 / mes</div>
+      </div>
+
+      <div class="form-section">
+        <label for="nombre">Nombre completo</label><br>
+        <input type="text" name="nombre" id="nombre" placeholder="Nombre completo">
+      </div>
+
+      <!--Input donde el usuario va a ingresar el número de su tarjeta-->
+      <div class="form-section">
+        <label for="número">Número de la tarjeta</label><br />
+        <input type="text" name="número" id="numberInput" placeholder="0000 0000 0000 0000" maxlength="10"/>
+      </div>
+
+      <!--Input oculto para conservar el número de la tarjeta-->
+      <input id="hiddenNumberInput" hidden />
+
+      <p id="invalidMessage"></p>
+      <p id="cardType"></p>
+
+      <div class="form-section">
+        <div class="date">
+          <label for="nombre">Fecha de vencimiento</label>
+          <input type="text" name="nombre" id="name" placeholder="MM/AA" maxlength="5">
+        </div>
+
+        <div class="code">
+          <label for="número">Código de seguridad</label>
+          <input type="text" name="número" id="cvv" placeholder="CVV" maxlength="3">
+        </div>
+      </div>
+
+      <div class="btn">
+        <button type="button" id="verifyBtn">REGISTRARSE</button>
+        <button type="button" id="resetBtn">LIMPIAR</button>
+      </div>
+      
+      <p id="cardType"></p>
+
+      <div class="card">
+        <i class="fa fa-cc-visa"></i>
+        <i class="fa fa-cc-mastercard"></i>
+        <i class="fa fa-cc-amex"></i>
+      </div>
+      <div class="card">
+        <img src="/icon/visa.jpg" alt="visa">
+        <img src="/icon/master.png" alt="master">
+        <img src="/icon/american-express.jpg" alt="american-express">
+      </div>
+
+    </form>
+  </main>
+  <script src="index.js" type="module"></script>
+</body>
+
+</html>
