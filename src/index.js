@@ -6,7 +6,7 @@ const cvvRestrictions = document.getElementById("cvv");
 const resetBtn = document.getElementById("resetBtn");
 const verifyBtn = document.getElementById("verifyBtn");
 const cardTypeMessage = document.getElementById("cardType");
-const allCards = document.querySelectorAll (".card img");
+const cardImgDiv = document.getElementById("cardImgDiv");
 
 //A)Enmascarado, validación y mensajes respecto al número de tarjeta
 numberInput.addEventListener("keyup", (ev) => {
@@ -42,26 +42,27 @@ numberInput.addEventListener("keyup", (ev) => {
 
   //5. Indica el tipo de tarjeta: Visa, mastercard y american express y le añade un sombreado a la img de la tarjeta
   if (card.value[0] === "4") {
-    cardTypeMessage.innerHTML = "soy visa";
-    allCards[0].classList.add ("selectedCard");
-    setTimeout(removeShadow, 700);
+    //Muestra la img de visa al costado del número de tarjeta
+    showCardImg("../icon/visa.jpg");
+    warningMessage("");
     
   } else if (card.value[0] === "5") {
-    cardTypeMessage.innerHTML = "soy mastercard";
-    allCards[1].classList.add ("selectedCard");
-    setTimeout(removeShadow, 700);
+    //Muestra la img de masterCard al costado del número de tarjeta
+    showCardImg("../icon/master.png");
+    warningMessage("");
     
   } else if (
     (card.value[0] === "3" && card.value[1] === "4") ||
     (card.value[0] === "3" && card.value[1] === "7")
     ) {
-    cardTypeMessage.innerHTML = "soy american-express";
-    allCards[2].classList.add ("selectedCard");
-    setTimeout(removeShadow, 700);
-      
+    //Muestra la img de american-express al lado del # de tarjeta
+    showCardImg("../icon/american-express.jpg");
+    warningMessage("");
+
   } else {
-    cardTypeMessage.innerHTML =
-      "Su tarjeta no pertenece a ninguna de las tres empresas ⚠";
+    warningMessage("Su tarjeta no pertenece a ninguna de las tres empresas ⚠");
+    //Si el campo esta vacío no muestra ninguna images en su lugar muestra un div que se nota por el color de la letra:
+    cardImgDiv.innerHTML = "<p>sin</p>";
   }
 });
 
@@ -73,6 +74,16 @@ cvvRestrictions.addEventListener("keyup", () => {
 //C) Funcionalidad del botón limpiar
 resetBtn.addEventListener("click", () => {
   document.getElementById("form").reset();
+  //limpia los mensajes que han podido aparecer
+  invalidMessage.innerHTML = "";
+  warningMessage("");
+  
+  //limpia la imagen de la tarjeta
+  cardImgDiv.innerHTML = "<p>sin</p>";
+
+  //Retirar el borde del numberInput
+  numberInput.classList.remove("validCardBorder");
+  numberInput.classList.remove("invalidCardBorder");
 });
 
 //D) Botón iniciar sesion alerta en caso algún campo del formulario este vacío
@@ -96,11 +107,19 @@ function invalidCardMessage() {
 function validCardBorder() {
   numberInput.classList.add("validCardBorder");
   numberInput.classList.remove("invalidCardBorder");
+  invalidMessage.innerHTML = "";
 }
 
-//Función llamanda en 5. remueve el sombreado de la tarjeta
-function removeShadow () {
-  [...allCards].map((card)=>{
-    card.classList.remove("selectedCard");
-  })
+//Función llamada en 5. muestra la imagen de la tarjeta que el usuario ingreso
+
+  function showCardImg (src){
+    const cardImage = document.createElement('img');
+    cardImage.src = src;
+    cardImgDiv.removeChild(cardImgDiv.firstElementChild);
+    cardImgDiv.appendChild(cardImage);
+  }
+
+//Contenido del mensaje de alerta
+function warningMessage(message){
+  cardTypeMessage.innerHTML= message;
 }

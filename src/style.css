@@ -120,6 +120,16 @@ label, #invalidMessage {
     padding: 3px 0;
 }
 
+#relative {
+    position: relative;
+}
+
+#cardImgDiv {
+    position: absolute;
+    right: 20px;
+    top: 42px;
+}
+
 button:hover {
     background-color: rgb(197 14 14);
     border-color: rgb(218 41 41);
@@ -152,8 +162,8 @@ button {
 
 img {
     border-radius: 3px;
-    height: 35px;
-    width: 60px;
+    height: 32px;
+    width: 55px;
 }
 
 .selectedCard {
@@ -174,7 +184,7 @@ img {
 
 /*primera página*/
 #pestaña1 {
-    background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.37) 0%, rgba(0, 0, 0, 0.37) 100%), url(../icon/main.jpg);
+    background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.39) 0%, rgba(0, 0, 0, 0.39) 100%), url(../icon/main.jpg);
     background-size: cover;
 }
 

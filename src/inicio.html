@@ -28,10 +28,12 @@
       </div>
 
       <!--Input donde el usuario va a ingresar el número de su tarjeta-->
-      <div class="form-section column">
+      <div class="form-section column" id="relative">
         <label for="número">Número de la tarjeta</label>
         <input type="text" name="número" id="numberInput" placeholder="0000 0000 0000 0000" maxlength="10"/>
         <p id="invalidMessage"></p>
+        <!--Contenedor dentro del cual se adiciona la img de la tarjeta al remover <p> con removeChild-->
+        <div id="cardImgDiv"><p>card</p></div>
       </div>
 
       <!--Input oculto para conservar el número de la tarjeta-->
