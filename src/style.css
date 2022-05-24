@@ -1,0 +1,205 @@
+body {
+    background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(../icon/pestaña2.jpg);
+    background-size: cover;
+    margin: 0;
+    text-align: center;
+    font-family: 'Merriweather Sans';
+    font-size: 16px;
+}
+
+input{
+    box-sizing: border-box;
+    font-size: 0.86rem;
+    font-weight: 100;
+    height: 39px;
+    padding: 2px 5px;
+}
+
+input:focus {
+    outline: 1px solid #ebe6e6;
+}
+
+span {
+    color: white;
+    display: block;
+    font-family: 'Montserrat Subrayada';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 3.3rem;
+    line-height: 95px;
+    text-align: center;
+    letter-spacing: 0.155em;
+    text-decoration-line: underline;
+    text-shadow: 6px 4px 5px #939393;
+}
+
+.price {
+    font-family: 'Merriweather Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 38px;
+    text-align: center;
+}
+
+.plan {
+    font-family: 'Merriweather Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 36px;
+    text-align: center;
+}
+
+.form-section {
+    display: flex;
+    margin-bottom: 21px;
+}
+
+.row {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.date, .code, .btn, .card {
+    display: flex;
+}
+
+.btn {
+    margin: 20px 0 10px;
+}
+
+.card{
+    margin: 25px 0 15px;
+}
+
+label, #invalidMessage {
+    text-align: left;
+}
+
+#form {
+    background: rgba(0, 0, 0, 0.67);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto 38px;
+    padding: 20px 40px 30px 40px;
+    width: 342px;
+}
+
+#brand {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 34px;
+    margin-right: 3px;
+    text-align: center;
+}
+
+#invalidMessage, #cardType {
+    margin: 9px 0 5px;
+    font-family: 'Inter';
+    font-size: 0.9rem;
+    font-weight: 200;
+}
+
+#vencimiento, #verifyBtn {
+    width: 152px;
+}
+
+#cvv, #resetBtn {
+    width: 140px;
+}
+
+#verifyBtn, #resetBtn {
+    
+    padding: 3px 0;
+}
+
+button:hover {
+    background-color: rgb(197 14 14);
+    border-color: rgb(218 41 41);
+}
+
+label {
+    color: white;
+    font-family: 'Merriweather Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.87rem;
+    line-height: 31px;
+    letter-spacing: 0.02rem;
+    margin-bottom: 7px;
+}
+
+button {
+    background-color: #F6121D;
+    border-radius: 4px;
+    border: 3px outset #F6121D;
+    color: white;
+    font-family: 'Merriweather Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 36px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+img {
+    border-radius: 3px;
+    height: 35px;
+    width: 60px;
+}
+
+.selectedCard {
+    box-shadow: 1px 2px 11px 4px #FFFFFF;
+}
+
+.validCardBorder {
+    border: 3px solid rgb(121, 195, 9);
+}
+
+.invalidCardBorder {
+    border: 3px solid #FF0000;
+}
+
+.invalidCardText {
+    color: #f9a8a8;
+}
+
+/*primera página*/
+#pestaña1 {
+    background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.37) 0%, rgba(0, 0, 0, 0.37) 100%), url(../icon/main.jpg);
+    background-size: cover;
+}
+
+#box {
+    background: rgba(0, 0, 0, 0.67);
+    box-sizing: border-box;
+    color: white;
+    height: 260px;
+    margin: 200px auto 0;
+    padding: 20px 35px;
+    width: 490px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.startBtn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 38px;
+}
+
+.startBtn > button {
+    width: 190px;
+}

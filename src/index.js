@@ -5,6 +5,8 @@ const invalidMessage = document.getElementById("invalidMessage");
 const cvvRestrictions = document.getElementById("cvv");
 const resetBtn = document.getElementById("resetBtn");
 const verifyBtn = document.getElementById("verifyBtn");
+const cardTypeMessage = document.getElementById("cardType");
+const allCards = document.querySelectorAll (".card img");
 
 //A)Enmascarado, validación y mensajes respecto al número de tarjeta
 numberInput.addEventListener("keyup", (ev) => {
@@ -26,7 +28,6 @@ numberInput.addEventListener("keyup", (ev) => {
   //Expected: ev.target.value = ##24 8989
   ev.target.value = maskedCardNumber.replace(/([# 0-9]{4})/g, "$1 ");
 
-  console.log(card.value); //PRUEBAS NO VAN EN VSCODE
 
   //4. Validar la tarjeta e indicar su tipo solo cuando el input no está vacío
   if (card.value === "") {
@@ -34,29 +35,33 @@ numberInput.addEventListener("keyup", (ev) => {
   } else {
     //4.1. Validar la tarjeta con isvalid method
     let resultOfValidator = validator.isValid(card.value);
-    console.log(resultOfValidator); //PRUEBAS NO VAN EN VSCODE
 
     //4.2. Indicar al user si su tarjeta es válida o no
-    if (resultOfValidator) {
-      invalidMessage.innerHTML = "tarjeta válida";
-    } else {
-      invalidMessage.innerHTML = "Ingrese una tarjeta válida";
-    }
+    resultOfValidator ? validCardBorder() : invalidCardMessage();
   }
 
-  //5. Indica el tipo de tarjeta: Visa, mastercard y american express
+  //5. Indica el tipo de tarjeta: Visa, mastercard y american express y le añade un sombreado a la img de la tarjeta
   if (card.value[0] === "4") {
-    document.getElementById("cardType").innerHTML = "soy visa";
+    cardTypeMessage.innerHTML = "soy visa";
+    allCards[0].classList.add ("selectedCard");
+    setTimeout(removeShadow, 700);
+    
   } else if (card.value[0] === "5") {
-    document.getElementById("cardType").innerHTML = "soy mastercard";
+    cardTypeMessage.innerHTML = "soy mastercard";
+    allCards[1].classList.add ("selectedCard");
+    setTimeout(removeShadow, 700);
+    
   } else if (
     (card.value[0] === "3" && card.value[1] === "4") ||
     (card.value[0] === "3" && card.value[1] === "7")
-  ) {
-    document.getElementById("cardType").innerHTML = "soy american-express";
+    ) {
+    cardTypeMessage.innerHTML = "soy american-express";
+    allCards[2].classList.add ("selectedCard");
+    setTimeout(removeShadow, 700);
+      
   } else {
-    document.getElementById("cardType").innerHTML =
-      "su tarjeta no pertenece a ninguna de la tres";
+    cardTypeMessage.innerHTML =
+      "Su tarjeta no pertenece a ninguna de las tres empresas ⚠";
   }
 });
 
@@ -80,3 +85,22 @@ verifyBtn.addEventListener("click", () => {
   //Dar alerta al user si el arreglo anterior no esta vacío 
   ArrayOfEmptyInput.length >= 1 && alert("Complete todo el formulario");
 });
+
+//Funciones llamandas en 4.2.: Dan estilo que indique tarjeta inválida
+function invalidCardMessage() {
+  invalidMessage.innerHTML = "Ingrese una tarjeta válida";
+  invalidMessage.classList.add("invalidCardText")
+  numberInput.classList.add("invalidCardBorder");
+}
+
+function validCardBorder() {
+  numberInput.classList.add("validCardBorder");
+  numberInput.classList.remove("invalidCardBorder");
+}
+
+//Función llamanda en 5. remueve el sombreado de la tarjeta
+function removeShadow () {
+  [...allCards].map((card)=>{
+    card.classList.remove("selectedCard");
+  })
+}
