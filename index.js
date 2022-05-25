@@ -43,12 +43,12 @@ numberInput.addEventListener("keyup", (ev) => {
   //5. Indica el tipo de tarjeta: Visa, mastercard y american express y le añade un sombreado a la img de la tarjeta
   if (card.value[0] === "4") {
     //Muestra la img de visa al costado del número de tarjeta
-    showCardImg("../images/visa.jpg");
+    showCardImg("./images/visa.jpg");
     warningMessage("");
     
   } else if (card.value[0] === "5") {
     //Muestra la img de masterCard al costado del número de tarjeta
-    showCardImg("../images/master.png");
+    showCardImg("./images/master.png");
     warningMessage("");
     
   } else if (
@@ -56,7 +56,7 @@ numberInput.addEventListener("keyup", (ev) => {
     (card.value[0] === "3" && card.value[1] === "7")
     ) {
     //Muestra la img de american-express al lado del # de tarjeta
-    showCardImg("../images/american-express.jpg");
+    showCardImg("./images/american-express.jpg");
     warningMessage("");
 
   } else {
