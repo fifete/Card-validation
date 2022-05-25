@@ -16,9 +16,9 @@ KINGMAX es una plataforma que ofrece servicio de streaming de películas, docume
 ## 2. Investigación UX 🔍
 KINGMAX ofrece productos como: películas, documentales, especiales y series de diversos géneros. Por lo que esta dirigido a un público amplio de 18 a 50 años que, según las encuestas, es el rango de edad que contrata y ve con mayor frecuencia los servicios de streaming.
 
-La validación de la tarjeta del usurio permitirá un pago exitoso y con ello, el acceso a los servicios de KINGMAX.
+La validación de la tarjeta del usuario permitirá un pago exitoso y con ello, el acceso a los servicios de KINGMAX.
 
-### Prototipado de baja fidelidad 📄
+### Prototipo de baja fidelidad 📄
 Se realiza un esquema general en una hoja de papel
 
 
