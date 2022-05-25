@@ -19,10 +19,22 @@ KINGMAX ofrece productos como: películas, documentales, especiales y series de 
 La validación de la tarjeta del usuario permitirá un pago exitoso y con ello, el acceso a los servicios de KINGMAX.
 
 ### Prototipo de baja fidelidad 📄
-Se realiza un esquema general en una hoja de papel
+Se realiza un esquema general en una hoja de papel, para este proyecto se diseñaron dos pantallas. La pantalla de inicio y la de registro, la primera posee dos botones, de los cuales el botón iniciar sesion no lleva a otra pestaña dado que no es el propósito del proyecto. Sin embargo, el botón suscríbete ahora nos lleva a la siguiente pestaña, en la cual se introducirá la información de la tarjeta:
+<div align="center">
+<img src="https://github.com/fifete/Card-validation/blob/main/img-Readme/pesta%C3%B1a1.jpg" width="500" >
+</div>
+<div align="center">
+<img src="https://github.com/fifete/Card-validation/blob/main/img-Readme/pesta%C3%B1a2.jpg" width="500" >
+</div>
+Una vez finalizada la introducción de datos el usuario aprieta el botón INGRESAR, el cual muestra los siguientes aspectos:
 
+1. Validez de la tarjeta (7): si la tarjeta es válida el borde del input del número de tarjeta se torna verde. Por otro lado, si se introduce un número inválido o no se ha puesto nada aparece un texto inferior: “Escriba un número de tarjeta válido”
+2. Tipo de tarjeta (8): Identifica si la tarjeta es visa, mastercard o american express y despliega un ícono del tipo de tarjeta. Por el contrario, si la tarjeta no pertenece a ninguna de estas tres categorías se despliega “Su tarjeta no pertenece a ninguna de las categorías indicadas abajo”.
 
-### HTML
+#### Feedback
+1. Validez de la tarjeta: si la tarjeta es inválida agregar un borde rojo de advertencia
+2. Tipo de tarjeta: debería mostrar el ícono de la tarjeta al lado del número de la tarjeta
+3. Botón ingresar: No tendría que validar la información de la tarjeta dado que este debería, teóricamente, redireccionarnos a otra pantalla. Por lo tanto, tanto la validación y tipo de la tarjeta debería 
 
 - [ ] **Uso de HTML semántico**
 
