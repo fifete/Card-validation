@@ -1,5 +1,5 @@
 body {
-    background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(../icon/pestaña2.jpg);
+    background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(../images/pestaña2.jpg);
     background-size: cover;
     margin: 0;
     text-align: center;
@@ -184,7 +184,7 @@ img {
 
 /*primera página*/
 #pestaña1 {
-    background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.39) 0%, rgba(0, 0, 0, 0.39) 100%), url(../icon/main.jpg);
+    background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.39) 0%, rgba(0, 0, 0, 0.39) 100%), url(../images/main.jpg);
     background-size: cover;
 }
 
